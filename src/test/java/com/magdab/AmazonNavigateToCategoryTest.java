@@ -19,6 +19,8 @@ public class AmazonNavigateToCategoryTest extends BaseTest{
     @Test
     public void basicAmazonNavigate(){
 
+//    NAVIGATE TO CHOSEN CATEGORY FROM MAIN PAGE:
+
         driver.get(AMAZON_HOME_PAGE_URL);
         driver.findElement(By.xpath(PICK_CATEGORY_MAIN_PAGE)).click();
         Assert.assertTrue(waitForElementToBePresent(CATEGORY_PAGE_ELEMENT_XPATH,3).isDisplayed());

@@ -24,7 +24,12 @@ public class AmazonSortingTest extends BaseTest{
 
 
     @Test
-    public void basicAmazonSorting() throws InterruptedException {
+    public void basicAmazonSorting(){
+
+     /* SORTING TEST FROM CATEGORY PAGE:
+    - FUNCTIONALITY CHECKED: FILTER CATEGORY RESULTS, ACCEPTING COOKIES
+    - using different types of locators than Buy Flow Test, to practice*/
+
         driver.get(AMAZON_PAGE_URL);
         driver.findElement(By.xpath(DELIVER_TO_BUTTON_XPATH)).click();
         waitForElementToBePresent(DELIVER_TO_LIST_XPATH,3).click();
@@ -33,7 +38,6 @@ public class AmazonSortingTest extends BaseTest{
 
         waitForElementToBePresent(COOKIES_DISMISS_XPATH,3).click();
         driver.findElement(By.xpath(SORT_BY_LIST_XPATH)).click();
-//        Thread.sleep(5000);
         waitForElementToBePresent(SORT_BY_NEWEST_XPATH,2).click();
         Assert.assertTrue(driver.findElement(By.xpath(RESULT_SELECT_XPATH)).isDisplayed());
 
